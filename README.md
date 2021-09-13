@@ -1,8 +1,12 @@
 # Juegos-Python-Equipo-7
-Carpeta de juegos de python - Semana Tec 1001S
+Carpeta de juegos de Python
 
-Alumnos:
-
+## Alumnos:
 Antonio López Chávez - A01741741
+<br/> Hugo Edgar Palomares Estrella - A01741537
 
-Hugo Edgar Palomares Estrella - A01741537
+## Semana TEC
+TC1001S.2 - Herramientas computacionales: el arte de la programación
+
+## Profesor: 
+Gabriela Zamora Leal
