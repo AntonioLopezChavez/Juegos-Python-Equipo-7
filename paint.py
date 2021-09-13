@@ -10,9 +10,9 @@ Exercises
 
 """
 
-from turtle import *
+from turtle import *    # Importar módulo turtle
 
-from freegames import vector
+from freegames import vector    # Importar módulo freegames y vectores para descargar videojuegos de python gratis
 
 
 def line(start, end):
