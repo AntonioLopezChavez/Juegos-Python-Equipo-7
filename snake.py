@@ -9,7 +9,7 @@ Exercises
 
 """
 
-from random import randrange
+from random import choice, randrange
 from turtle import *
 
 from freegames import square, vector
@@ -51,14 +51,21 @@ def move():
 
     clear()
 
-    for body in snake:
-        square(body.x, body.y, 9, 'black')
 
-    square(food.x, food.y, 9, 'green')
+    for body in snake:
+        square(body.x, body.y, 9, snakeColor)
+
+    square(food.x, food.y, 9, foodColor)
     update()
     ontimer(move, 100)
 
 
+colorList = ['blue', 'black', 'green', 'purple', 'orange']
+snakeColor = choice(colorList)
+foodColor = choice(colorList)
+while foodColor == snakeColor:
+    snakeColor = choice(colorList)
+    
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
