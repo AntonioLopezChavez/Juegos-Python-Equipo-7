@@ -1,14 +1,7 @@
-"""Paint, for drawing shapes.
+#Paint.py
 
-Exercises
-
-1. Add a color.
-2. Complete circle.
-3. Complete rectangle.
-4. Complete triangle.
-5. Add width parameter.
-
-"""
+#Hugo Edgar Palomares - A01741537
+#Antonio López Chávez - A01741741
 
 from turtle import *
 
