@@ -1,14 +1,15 @@
-#Paint.py
+# Paint.py
 
-#Hugo Edgar Palomares - A01741537
-#Antonio López Chávez - A01741741
+# Hugo Edgar Palomares - A01741537
+# Antonio López Chávez - A01741741
+# TC1001S
 
 from turtle import *
 
 from freegames import vector
 
 
-def line(start, end):
+def line(start, end): # Función para crear una linea
     "Draw line from start to end."
     up()
     goto(start.x, start.y)
@@ -16,7 +17,7 @@ def line(start, end):
     goto(end.x, end.y)
 
 
-def square(start, end):
+def square(start, end): # Función para crear un cuadrado
     "Draw square from start to end."
     up()
     goto(start.x, start.y)
@@ -30,7 +31,7 @@ def square(start, end):
     end_fill()
 
 
-def circle(start, end):
+def circle(start, end): # Función para crear un círculo, completado por alumnos
     "Draw circle from start to end."
     up()
     goto(start.x, start.y)
@@ -45,7 +46,7 @@ def circle(start, end):
     end_fill()
 
 
-def rectangle(start, end):
+def rectangle(start, end): # Función para crear un rectángulo, completado por alumnos
     "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
@@ -62,7 +63,7 @@ def rectangle(start, end):
     end_fill()
 
 
-def triangle(start, end):
+def triangle(start, end): # Función para crear un triángulo, completado por alumnos
     "Draw triangle from start to end." 
     up()
     goto(start.x, start.y)
@@ -76,7 +77,7 @@ def triangle(start, end):
     end_fill()
 
 
-def tap(x, y):
+def tap(x, y): # Función para establecer inputs de mouse para iniciar figuras o lineas
     "Store starting point or draw shape."
     start = state['start']
 
@@ -89,7 +90,7 @@ def tap(x, y):
         state['start'] = None
 
 
-def store(key, value):
+def store(key, value):  # Función para guardar valor de inputs para cambiar figuras y/o colores
     "Store value in state at key."
     state[key] = value
 
@@ -99,12 +100,12 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
-onkey(lambda: color('black'), 'K')
+onkey(lambda: color('black'), 'K')  # Opciones para seleccionar figuras y colores
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('orange'), 'O')
+onkey(lambda: color('orange'), 'O') # Añadido por alumnos
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
