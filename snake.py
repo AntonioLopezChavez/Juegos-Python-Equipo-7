@@ -9,6 +9,12 @@ Exercises
 
 """
 
+# Snake.py
+
+# Hugo Edgar Palomares - A01741537
+# Antonio López Chávez - A01741741
+# TC1001S
+
 from random import choice, randrange
 from turtle import *
 
