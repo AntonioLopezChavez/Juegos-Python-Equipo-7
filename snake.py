@@ -9,7 +9,13 @@ Exercises
 
 """
 
-from random import randrange
+# Snake.py
+
+# Hugo Edgar Palomares - A01741537
+# Antonio López Chávez - A01741741
+# TC1001S
+
+from random import choice, randrange
 from turtle import *
 
 from freegames import square, vector
@@ -17,7 +23,6 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
 
 def change(x, y):
     "Change snake direction."
@@ -55,9 +60,25 @@ def move():
         square(body.x, body.y, 9, 'black')
 
     square(food.x, food.y, 9, 'green')
+    
     update()
     ontimer(move, 100)
+    moveFood()
+    
 
+def moveFood():
+    randx = randrange(-1, 2) * 10
+    randy = randrange(-1, 2) * 10
+    if randy == 0:
+        food.x = food.x + randx
+    else:
+        food.y = food.y + randy
+
+colorList = ['blue', 'black', 'green', 'purple', 'orange']
+snakeColor = choice(colorList)
+foodColor = choice(colorList)
+while foodColor == snakeColor:
+    snakeColor = choice(colorList)
 
 setup(420, 420, 370, 0)
 hideturtle()
@@ -68,4 +89,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
+
 done()
