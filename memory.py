@@ -1,11 +1,14 @@
 from random import *
 from turtle import *
+from typing import Counter
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+rubb = ("python","c++","html","css","java","flutter","c","cpp","py","django","db","cs","code","pro","stress","macos","windows","linux","data","science","msft","google","fb","intern","yahoo","linkedin","binary","sort","merge","bigO","$","bug","python","c++","html","css","java","flutter","c","cpp","py","django","db","cs","code","pro","stress","macos","windows","linux","data","science","msft","google","fb","intern","yahoo","linkedin","binary","sort","merge","bigO","$","bug")
+tiles = list(rubb)
 state = {'mark': None}
 hide = [True] * 64
+numero = 0
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -29,6 +32,9 @@ def xy(count):
 
 def tap(x, y):
     "Update mark and hidden tiles based on tap."
+    global numero 
+    numero += 1
+    print(numero)
     spot = index(x, y)
     mark = state['mark']
 
@@ -56,18 +62,22 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        goto(x + 25, y+18) #########
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Arial', 10, 'normal'), align='center')
 
+    penup()
+    goto(-200,200)
+    write(numero, font=20)
     update()
     ontimer(draw, 100)
 
 shuffle(tiles)
-setup(420, 420, 370, 0)
+setup(420, 450, 370, 0)
 addshape(car)
 hideturtle()
 tracer(False)
 onscreenclick(tap)
 draw()
+
 done()
