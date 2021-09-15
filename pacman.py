@@ -10,6 +10,13 @@ Exercises
 
 """
 
+# Pacman.py
+
+# Hugo Edgar Palomares - A01741537
+# Antonio López Chávez - A01741741
+# Carlos Seda - A00827514
+# TC1001S
+
 from random import choice
 from turtle import *
 
@@ -21,10 +28,10 @@ writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],
-    [vector(-180, -160), vector(0, 5)],
-    [vector(100, 160), vector(0, -5)],
-    [vector(100, -140), vector(-5, 0)],
+    [vector(-180, 160), vector(10, 0)],
+    [vector(-180, -160), vector(0, 10)],
+    [vector(100, 160), vector(0, -10)],
+    [vector(100, -140), vector(-10, 0)],
 ]
 # fmt: off
 tiles = [
@@ -138,10 +145,10 @@ def move():
             
         else:
             options = [
-                vector(8, 0),
-                vector(-8, 0),
-                vector(0, 8),
-                vector(0, -8),
+                vector(10, 0),
+                vector(-10, 0),
+                vector(0, 10),
+                vector(0, -10),
             ]
             plan = choice(options)
             course.x = plan.x
