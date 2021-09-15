@@ -8,6 +8,12 @@ Exercises
 4. Change the speed of the ball.
 
 """
+# Pacman.py
+
+# Hugo Edgar Palomares - A01741537
+# Antonio López Chávez - A01741741
+# Carlos Seda - A00827514
+# TC1001S
 
 from random import randrange
 from turtle import *
@@ -24,7 +30,7 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 15
+        speed.x = (x + 200) / 15    # Cambios del alumno, los proyectiles son más rápidos 
         speed.y = (y + 200) / 15
 
 
@@ -59,7 +65,7 @@ def move():
         target.x -= 0.9
 
     if inside(ball):
-        speed.y -= 0.1
+        speed.y -= 0.1  # Cambios de alumno, el proyectil tiene menos caída 
         ball.move(speed)
 
     dupe = targets.copy()
@@ -71,9 +77,11 @@ def move():
 
     draw()
 
-    for target in targets:
+    for target in targets:  # Cambios de alumno, ahora el juego no se detiene, se reinician los balones
         if not inside(target):
-            return
+            targets.remove(target)
+            target = vector(200, target.y)
+            targets.append(target)
 
     ontimer(move, 50)
 
